@@ -1,6 +1,6 @@
 TARGET	= stk-sim
 
-SRCS	= main.c hexdump.c pty.c timed_read.c
+SRCS	= main.c hexdump.c pty.c timed_read.c stk600.c
 
 OBJS=$(SRCS:.c=.o)
 

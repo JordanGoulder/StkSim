@@ -5,6 +5,7 @@
 #include "hexdump.h"
 #include "pty.h"
 #include "timed_read.h"
+#include "stk600.h"
 
 int main(int argc, char argv[])
 {
@@ -39,6 +40,8 @@ int main(int argc, char argv[])
             printf("\nReceived %d byte%s\n", count, count == 1 ? ":" : "s:");
             hexdump(input, count);
             putchar('\n');
+
+            stk600_process_command(fd, input, count);
         } else {
             putchar('.');
             fflush(stdout);
